@@ -5,11 +5,15 @@ Piano Runner is a simple, classic game based off the game Piano Tiles. The game 
 The goal of the game is to go through the whole piano board without pressing a wrong key in the fastest time!
 ## Functionality and MVP Features
 ### Welcome Page
+[welcome-mockup]: https://github.com/cstinepham/piano-runner/blob/master/docs/images/piano_runner_mockup1.jpg
+![alt text][welcome-mockup]
 * Start Button
 * Instructions
 * Leaderboard
 
 ### Game Play
+[gameplay-mockup]: https://github.com/cstinepham/piano-runner/blob/master/docs/images/piano_runner_mockup2.jpg
+![alt text][gameplay-mockup]
 * Piano Board UI
   * 'ASDF' and 'HJKL' on the bottom most keys
   * Question -- Too many keys? Just have one hand? Motive for more keys was to fill web page screen to not be too empty. But what is better gameplay
