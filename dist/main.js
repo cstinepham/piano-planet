@@ -17274,8 +17274,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var myHeading = document.querySelector('h1');
-myHeading.textContent = 'Piano Planet';
+// var myHeading = document.querySelector('h1');
+// myHeading.textContent = 'Piano Planet';
 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");

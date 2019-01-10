@@ -1,10 +1,22 @@
-.myCanvas {
-  border-width: 1px;
+.main-container {
+  display: flex;
+  flex-direction: row;
+  background: rgba(128, 128, 128, 0.192);
+  margin: 50px;
+}
+
+.left-panel {
+  width: 70%;  
   border-style: solid;
-  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-color: gray;
   
 }
 
-body {
+.right-panel {
+  width: 30%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
   
-}
+}  
