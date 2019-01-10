@@ -1,0 +1,30 @@
+{
+  "name": "piano-planet",
+  "version": "1.0.0",
+  "description": "A classic game - don't hit the white tiles!",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cstinepham/piano-planet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cstinepham/piano-planet/issues"
+  },
+  "homepage": "https://github.com/cstinepham/piano-planet#readme",
+  "devDependencies": {
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
