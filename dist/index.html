@@ -8,18 +8,22 @@
 </head>
 
 <body>
-  <div class="main-container">
+  <div id="mainContainer">
     
-    <div class="left-panel">
-      <canvas id="myCanvas">
+    <div id="leftPanel">
+      
+      <canvas id="myCanvas" style="border:1px solid rgb(255, 78, 78);">
         Your browser does not support the canvas element.
       </canvas>
+      
     </div>
 
-    <div class="right-panel">
+    <div id="rightPanel">
       <h1>Piano Planet</h1>
-      <button>Start Game</button>
+      <button class="playGameButton">Play Game</button>
       <h3>Instructions</h3>
+      <p> You have 10 seconds to play as many correct piano notes as you can - 
+        Don't play the white notes!</p>
       <h3>Leaderboard</h3>
 
     </div>

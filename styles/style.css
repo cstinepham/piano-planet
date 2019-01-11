@@ -1,19 +1,22 @@
-.main-container {
+#mainContainer {
   display: flex;
   flex-direction: row;
   background: rgba(128, 128, 128, 0.192);
   margin: 50px;
+  min-height: 600px;
 }
 
-.left-panel {
+#leftPanel {
   width: 70%;  
   border-style: solid;
   border-width: 1px;
   border-color: gray;
+  display: flex;
+  justify-content: center;
   
 }
 
-.right-panel {
+#rightPanel {
   width: 30%;
   border-style: solid;
   border-width: 1px;

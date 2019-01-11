@@ -1,21 +1,23 @@
 import _ from 'lodash';
+var CANVAS_WIDTH, CANVAS_HEIGHT;
+var canvasElement, canvasCtx, timeLimit = 10, time = 0, score = 0;
 
-// var myHeading = document.querySelector('h1');
-// myHeading.textContent = 'Piano Planet';
+function drawCanvas() {
+  canvasElement = document.getElementById("myCanvas");
+  let leftPanel = document.getElementById("leftPanel");
+  // canvasElement.width = leftPanel.width;
+  // canvasElement.height = leftPanel.height-50;
+  
+  CANVAS_WIDTH = canvasElement.width;
+  CANVAS_HEIGHT = canvasElement.height;
+  console.log(CANVAS_HEIGHT);
+  console.log(CANVAS_WIDTH);
 
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-ctx.beginPath();
-ctx.arc(105, 50, 50, 0, 2 * Math.PI);
-ctx.stroke();
+  canvasCtx = canvasElement.getContext("2d");
+  canvasCtx.fillStyle = "#FF0000";
 
-function component() {
-  let element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpacky'], ' ');
-  return element;
 }
 
-document.body.appendChild(component());
+document.querySelector(".playGameButton").addEventListener("click", drawCanvas)
+console.log("Webpack is working =)")
 
-
-console.log("Webpack is working =) ")
