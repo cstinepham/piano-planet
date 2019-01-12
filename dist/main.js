@@ -17365,7 +17365,6 @@ function update(key) {
     if ((key == 97 && tile4 == 0) || (key == 115 && tile4 == 1) || (key == 100 && tile4 == 2) || (key == 102 && tile4 == 3)) {
       console.log(tile4);
       score++;
-      
       filledTile.update();
     }
     else {
@@ -17373,7 +17372,8 @@ function update(key) {
       return false;
     }
   }
-
+  
+  document.getElementById("score").innerHTML = score;
   return true;
 }
 
