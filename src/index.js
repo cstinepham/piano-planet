@@ -4,6 +4,16 @@ var canvasElement, canvasCtx, timeLimit = 10, time = 0, score = 0;
 var tile1, tile2, tile3, tile4;
 
 function drawCanvas() {
+
+  var timeleft = 10;
+
+  var timer = setInterval(function () {
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if (timeleft <= 0)
+      clearInterval(timer);
+  }, 1000);
+
   loaded = true;
   canvasElement = document.getElementById("myCanvas");
 
@@ -37,10 +47,6 @@ var filledTile = {
   width: 480/4,
   height: 600/4,
   draw: function(z1, z2) {
-    console.log("CANVAS_HEIGHT: " + CANVAS_HEIGHT);
-    console.log("CANVAS_WIDTH: " + CANVAS_WIDTH);
-    console.log("width is: " + this.width)
-    console.log("height is: " + this.height);
     canvasCtx.fillStyle = this.color;
     canvasCtx.fillRect(z1 * this.width, z2 * this.height, this.width, this.height);
   },
@@ -80,19 +86,16 @@ function draw() {
 }
 
 function update(key) {
-  console.log("Im in update??")
 
   if (key == 97 || key == 115 || key == 100 || key == 102) {
     if ((key == 97 && tile4 == 0) || (key == 115 && tile4 == 1) || (key == 100 && tile4 == 2) || (key == 102 && tile4 == 3)) {
       console.log(tile4);
       score++;
-      console.log("I'm in the first if thingy")
+      
       filledTile.update();
     }
     else {
       alert('You pressed the wrong key! Game Over.');
-      clearInterval(threading);
-      console.log("I'm in the 2nd if thingy")
       return false;
     }
   }
