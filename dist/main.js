@@ -17273,20 +17273,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 
-var CANVAS_WIDTH, CANVAS_HEIGHT;
+var CANVAS_WIDTH, CANVAS_HEIGHT, loaded;
 var canvasElement, canvasCtx, timeLimit = 10, time = 0, score = 0;
 var tile1, tile2, tile3, tile4;
 
 function drawCanvas() {
+  loaded = true;
   canvasElement = document.getElementById("myCanvas");
 
   CANVAS_WIDTH = canvasElement.width;
   CANVAS_HEIGHT = canvasElement.height;
   
-  
-
   canvasCtx = canvasElement.getContext("2d");
-  canvasCtx.fillStyle = "000000";
+  canvasCtx.fillStyle = "#FFFFFF";
+  canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   
   var xt = Math.floor(Math.random() * 4);
   tile1 = xt;
@@ -17353,9 +17353,37 @@ function draw() {
   var yt = Math.floor(Math.random() * 3);
 }
 
-document.querySelector(".playGameButton").addEventListener("click", drawCanvas)
+function update(key) {
+  console.log("Im in update??")
 
-console.log("Webpack is working =)")
+  if (key == 97 || key == 115 || key == 100 || key == 102) {
+    if ((key == 97 && tile4 == 0) || (key == 115 && tile4 == 1) || (key == 100 && tile4 == 2) || (key == 102 && tile4 == 3)) {
+      console.log(tile4);
+      score++;
+      console.log("I'm in the first if thingy")
+      filledTile.update();
+    }
+    else {
+      alert('You pressed the wrong key! Game Over.');
+      clearInterval(threading);
+      console.log("I'm in the 2nd if thingy")
+      return false;
+    }
+  }
+
+  return true;
+}
+
+document.querySelector(".playGameButton").addEventListener("click", drawCanvas)
+document.addEventListener("keypress", function onPress(event) {
+  if (loaded) {
+    console.log(event.which)
+    loaded = update(event.which);
+  }
+});
+
+
+
 
 
 
