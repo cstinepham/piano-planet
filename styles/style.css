@@ -8,25 +8,26 @@
 
 #leftPanel {
   width: 70%;  
-  /* border-style: solid;
-  border-width: 1px;
-  border-color: gray; */
   display: flex;
   justify-content: center;
-  /* background-image: url('../assets/space.gif'); */
-  background: white;
+  background-image: url('../assets/space.gif');
 }
 
 #rightPanel {
   width: 30%;
   color: white;  
-  /* border-style: solid;
-  border-width: 1px;
-  border-color: gray; */
   padding-left: 20px;
   background-image: linear-gradient(to bottom right, #2e0638, #4e4646);
   
 }  
+
+#canvasBackground {
+  background: white;
+  width: 480px;
+  height: 600px;
+  position: absolute;
+  z-index: 1;
+}
 
 body {
   background-color:black;

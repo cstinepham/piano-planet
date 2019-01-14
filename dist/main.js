@@ -17273,31 +17273,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 
-var CANVAS_WIDTH, CANVAS_HEIGHT, loaded;
+var CANVAS_WIDTH, CANVAS_HEIGHT, loaded, threading;
 var canvasElement, canvasCtx, timeLimit = 10, time = 0, score = 0;
 var tile1, tile2, tile3, tile4;
 
 function drawCanvas() {
-
-  var timeleft = 10;
-
-  var timer = setInterval(function () {
-    timeleft--;
-    document.getElementById("countdowntimer").textContent = timeleft;
-    if (timeleft <= 0)
-      clearInterval(timer);
-  }, 1000);
 
   loaded = true;
   canvasElement = document.getElementById("myCanvas");
 
   CANVAS_WIDTH = canvasElement.width;
   CANVAS_HEIGHT = canvasElement.height;
-  
+
   canvasCtx = canvasElement.getContext("2d");
   canvasCtx.fillStyle = "#FFFFFF";
   canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  
   var xt = Math.floor(Math.random() * 4);
   tile1 = xt;
   xt = Math.floor(Math.random() * 4);
@@ -17312,6 +17302,21 @@ function drawCanvas() {
   filledTile.draw(tile3, 2);
   filledTile.draw(tile4, 3);
   drawLines();
+      clearInterval(threading);
+      threading = setInterval(function () {
+        time += 0.01;
+        if (time >= timeLimit) {
+          clearInterval(threading);
+          document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
+        } else
+            var timer = setInterval(function () {
+              timeLimit--;
+              document.getElementById("countdowntimer").textContent = timeLimit;
+              if (timeLimit <= 0)
+                clearInterval(timer);
+            }, 1000);
+
+      }, 10)
 }
 
 var filledTile = {
@@ -17363,7 +17368,6 @@ function update(key) {
 
   if (key == 97 || key == 115 || key == 100 || key == 102) {
     if ((key == 97 && tile4 == 0) || (key == 115 && tile4 == 1) || (key == 100 && tile4 == 2) || (key == 102 && tile4 == 3)) {
-      console.log(tile4);
       score++;
       filledTile.update();
     }
