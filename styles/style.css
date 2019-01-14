@@ -22,7 +22,7 @@
 }  
 
 #canvasBackground {
-  background: white;
+  background: rgba(255, 255, 255, 0.3);
   width: 480px;
   height: 600px;
   position: absolute;

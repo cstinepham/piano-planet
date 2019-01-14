@@ -12,7 +12,7 @@ function drawCanvas() {
   CANVAS_HEIGHT = canvasElement.height;
 
   canvasCtx = canvasElement.getContext("2d");
-  canvasCtx.fillStyle = "#FFFFFF";
+  canvasCtx.fillStyle = "rgba(255, 255, 255, 0)";
   canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   var xt = Math.floor(Math.random() * 4);
   tile1 = xt;
