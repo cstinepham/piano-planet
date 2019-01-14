@@ -21,14 +21,14 @@
 }
 
 #leftPanel {
-  width: 70%;  
+  width: 73%;  
   display: flex;
   justify-content: center;
   background-image: url('../assets/space.gif');
 }
 
 #rightPanel {
-  width: 30%;
+  width: 27%;
   color: white;  
   padding-left: 20px;
   background-image: linear-gradient(to bottom right, #3a0d55, #d6611d);
@@ -50,5 +50,5 @@ body {
 
 h1 {
   text-shadow: 0 0 20px rgb(43, 255, 0);
-  font-size: 48px;
+  font-size: 42px;
 }

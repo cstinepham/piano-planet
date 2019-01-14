@@ -17363,13 +17363,41 @@ function draw() {
   var xt = Math.floor(Math.random() * 3);
   var yt = Math.floor(Math.random() * 3);
 }
+function play(key) {
+  var noteId;
+  switch (key) {
+    case 97:
+      noteId = "c_note";
+      break;
+    case 115: 
+      noteId = "d_note";
+      break;
+    case 100:
+      noteId = "e_note";
+      break;
+    case 102:
+      noteId = "f_note";
+      break;
+    default:
+      break;
+  }
+  var audio = document.getElementById(noteId);
+
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  // key.classList.add('active')
+  // audio.play();
+}
 
 function update(key) {
 
   if (key == 97 || key == 115 || key == 100 || key == 102) {
     if ((key == 97 && tile4 == 0) || (key == 115 && tile4 == 1) || (key == 100 && tile4 == 2) || (key == 102 && tile4 == 3)) {
+      
       score++;
       filledTile.update();
+      play(key)
     }
     else {
       alert('You pressed the wrong key! Game Over.');
