@@ -41,6 +41,33 @@
   height: 600px;
   position: absolute;
   z-index: 1;
+  display: flex;
+}
+
+#score {
+  font-size: 24px;
+  color: rgb(43, 167, 47);
+  font-weight: bold;
+}
+
+#keyboardLetters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 150px;
+  position: absolute;
+  bottom: 0;
+  color: rgb(255, 255, 255);
+  font-size: 36px;
+  width: 100%;
+  text-shadow: 0 0 20px rgb(248, 248, 248);
+}
+
+#key {
+  width: 100px;
+  line-height: 150px;
+  text-align: center;
+  
 }
 
 body {

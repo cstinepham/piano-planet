@@ -1,6 +1,6 @@
 import _ from 'lodash';
 var CANVAS_WIDTH, CANVAS_HEIGHT, loaded, threading;
-var canvasElement, canvasCtx, timeLimit = 10, time = 0, score = 0;
+var canvasElement, canvasCtx, time = 10, score = 0;
 var tile1, tile2, tile3, tile4;
 
 function drawCanvas() {
@@ -28,21 +28,16 @@ function drawCanvas() {
   filledTile.draw(tile3, 2);
   filledTile.draw(tile4, 3);
   drawLines();
+  clearInterval(threading);
+  threading = setInterval(function () {
+    time -= 0.01;
+    if (time <= 0) {
       clearInterval(threading);
-      threading = setInterval(function () {
-        time += 0.01;
-        if (time >= timeLimit) {
-          clearInterval(threading);
-          document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
-        } else
-            var timer = setInterval(function () {
-              timeLimit--;
-              document.getElementById("countdowntimer").textContent = timeLimit;
-              if (timeLimit <= 0)
-                clearInterval(timer);
-            }, 1000);
-
-      }, 10)
+      document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
+    } else
+      document.getElementById("countdowntimer").innerHTML = time.toPrecision(4);
+  }, 10)
+  
 }
 
 var filledTile = {
@@ -112,8 +107,6 @@ function play(key) {
   if (!audio) return;
   audio.currentTime = 0;
   audio.play();
-  // key.classList.add('active')
-  // audio.play();
 }
 
 function update(key) {
@@ -131,8 +124,15 @@ function update(key) {
     }
   }
   
-  document.getElementById("score").innerHTML = score;
-  return true;
+  
+
+    document.getElementById("score").innerHTML = score;
+    if (time <= 0) {
+      clearInterval(threading);
+      document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
+      return false;
+    }
+    return true;
 }
 
 document.querySelector(".playGameButton").addEventListener("click", drawCanvas)
