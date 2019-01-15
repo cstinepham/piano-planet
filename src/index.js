@@ -6,14 +6,17 @@ var tile1, tile2, tile3, tile4;
 function drawCanvas() {
 
   loaded = true;
+  time = 10;
+  score = 0;
   canvasElement = document.getElementById("myCanvas");
 
   CANVAS_WIDTH = canvasElement.width;
   CANVAS_HEIGHT = canvasElement.height;
 
   canvasCtx = canvasElement.getContext("2d");
-  canvasCtx.fillStyle = "rgba(255, 255, 255, 0)";
-  canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  canvasCtx.fillStyle = 000;
+
+  // canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   var xt = Math.floor(Math.random() * 4);
   tile1 = xt;
   xt = Math.floor(Math.random() * 4);
@@ -33,7 +36,7 @@ function drawCanvas() {
     time -= 0.01;
     if (time <= 0) {
       clearInterval(threading);
-      document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
+      document.getElementById("score").innerHTML = score + " tiles!";
     } else
       document.getElementById("countdowntimer").innerHTML = time.toPrecision(4);
   }, 10)
@@ -41,7 +44,7 @@ function drawCanvas() {
 }
 
 var filledTile = {
-  color: "#000000",
+  color: "rgba(255, 255, 255, 0)",
   x: 0,
   y: 0,
   width: 480/4,
@@ -80,10 +83,6 @@ function drawLines() {
   canvasCtx.stroke();
 }
 
-function draw() {
-  var xt = Math.floor(Math.random() * 3);
-  var yt = Math.floor(Math.random() * 3);
-}
 function play(key) {
   var noteId;
   switch (key) {
@@ -129,7 +128,7 @@ function update(key) {
     document.getElementById("score").innerHTML = score;
     if (time <= 0) {
       clearInterval(threading);
-      document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
+      document.getElementById("score").innerHTML = score + " tiles!";
       return false;
     }
     return true;

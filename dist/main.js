@@ -17307,7 +17307,7 @@ function drawCanvas() {
     time -= 0.01;
     if (time <= 0) {
       clearInterval(threading);
-      document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
+      document.getElementById("score").innerHTML = score + " tiles!";
     } else
       document.getElementById("countdowntimer").innerHTML = time.toPrecision(4);
   }, 10)
@@ -17403,7 +17403,7 @@ function update(key) {
     document.getElementById("score").innerHTML = score;
     if (time <= 0) {
       clearInterval(threading);
-      document.getElementById("score").innerHTML = "You went through " + score + " tiles!";
+      document.getElementById("score").innerHTML = score + " tiles!";
       return false;
     }
     return true;
