@@ -12,7 +12,13 @@
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
 }
-
+.playGameButton:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: none;
+  text-decoration: line-through;
+}
 .resetButton {
   background-color: rgb(231, 75, 47);
 

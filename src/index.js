@@ -4,7 +4,8 @@ var canvasElement, canvasCtx, time = 10, score = 0;
 var tile1, tile2, tile3, tile4;
 
 function drawCanvas() {
-
+  
+  disablePlayButton();
   loaded = true;
   time = 10;
   score = 0;
@@ -106,6 +107,10 @@ function play(key) {
   if (!audio) return;
   audio.currentTime = 0;
   audio.play();
+}
+
+function disablePlayButton() {
+  document.querySelector(".playGameButton").disabled = true;
 }
 
 function update(key) {
