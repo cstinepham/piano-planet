@@ -39,7 +39,7 @@ function drawCanvas() {
       clearInterval(threading);
       document.getElementById("score").innerHTML = score + " tiles!";
     } else
-      document.getElementById("countdowntimer").innerHTML = time.toPrecision(4);
+      document.getElementById("countdowntimer").innerHTML = Math.floor(time);
   }, 10)
   
 }

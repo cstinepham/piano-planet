@@ -88,11 +88,15 @@
 #timer {
   font-size: 40px;
   font-weight: bold;
-  color: red;
+  color: rgb(255, 231, 231);
   text-shadow: 0 0 20px rgb(255, 255, 255);
   z-index: 10;
   position: absolute;
-  margin-left: -300px;
+  margin-left: -355px;
+}
+
+#countdowntimer {
+  color: red;
 }
 
 body {
