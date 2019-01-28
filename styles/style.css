@@ -85,6 +85,16 @@
   
 }
 
+#timer {
+  font-size: 40px;
+  font-weight: bold;
+  color: red;
+  text-shadow: 0 0 20px rgb(255, 255, 255);
+  z-index: 10;
+  position: absolute;
+  margin-left: -300px;
+}
+
 body {
   background-color:black;
   font-family: 'Courier New', Courier, monospace;
