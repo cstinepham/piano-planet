@@ -15,7 +15,7 @@ function drawCanvas() {
   CANVAS_HEIGHT = canvasElement.height;
 
   canvasCtx = canvasElement.getContext("2d");
-  canvasCtx.fillStyle = 000;
+  canvasCtx.fillStyle = "#000";
 
   // canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   var xt = Math.floor(Math.random() * 4);
@@ -45,7 +45,7 @@ function drawCanvas() {
 }
 
 var filledTile = {
-  color: "rgba(255, 255, 255, 0)",
+  color: "#000",
   x: 0,
   y: 0,
   width: 480/4,

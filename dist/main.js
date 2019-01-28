@@ -17278,16 +17278,20 @@ var canvasElement, canvasCtx, time = 10, score = 0;
 var tile1, tile2, tile3, tile4;
 
 function drawCanvas() {
-
+  
+  disablePlayButton();
   loaded = true;
+  time = 10;
+  score = 0;
   canvasElement = document.getElementById("myCanvas");
 
   CANVAS_WIDTH = canvasElement.width;
   CANVAS_HEIGHT = canvasElement.height;
 
   canvasCtx = canvasElement.getContext("2d");
-  canvasCtx.fillStyle = "rgba(255, 255, 255, 0)";
-  canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  canvasCtx.fillStyle = "#000";
+
+  // canvasCtx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   var xt = Math.floor(Math.random() * 4);
   tile1 = xt;
   xt = Math.floor(Math.random() * 4);
@@ -17315,7 +17319,7 @@ function drawCanvas() {
 }
 
 var filledTile = {
-  color: "#000000",
+  color: "#000",
   x: 0,
   y: 0,
   width: 480/4,
@@ -17354,10 +17358,6 @@ function drawLines() {
   canvasCtx.stroke();
 }
 
-function draw() {
-  var xt = Math.floor(Math.random() * 3);
-  var yt = Math.floor(Math.random() * 3);
-}
 function play(key) {
   var noteId;
   switch (key) {
@@ -17381,6 +17381,10 @@ function play(key) {
   if (!audio) return;
   audio.currentTime = 0;
   audio.play();
+}
+
+function disablePlayButton() {
+  document.querySelector(".playGameButton").disabled = true;
 }
 
 function update(key) {
