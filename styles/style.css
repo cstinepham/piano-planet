@@ -86,7 +86,7 @@
 }
 
 #timer {
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
   color: rgb(255, 231, 231);
   text-shadow: 0 0 20px rgb(255, 255, 255);
@@ -97,6 +97,7 @@
 
 #countdowntimer {
   color: red;
+  font-size: 40px;
 }
 
 body {
