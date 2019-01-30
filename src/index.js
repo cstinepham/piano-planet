@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import Tile from './tile.js';
+
 var CANVAS_WIDTH, CANVAS_HEIGHT, loaded, threading;
 var canvasElement, canvasCtx, time = 10, score = 0;
 var tile1, tile2, tile3, tile4;
@@ -27,6 +29,7 @@ function drawCanvas() {
   xt = Math.floor(Math.random() * 4);
   tile4 = xt;
   console.log(tile1, tile2, tile3, tile4);
+
   filledTile.draw(tile1, 0);
   filledTile.draw(tile2, 1);
   filledTile.draw(tile3, 2);
@@ -39,7 +42,7 @@ function drawCanvas() {
       clearInterval(threading);
       document.getElementById("score").innerHTML = score + " tiles!";
     } else
-      document.getElementById("countdowntimer").innerHTML = time.toPrecision(4);
+      document.getElementById("countdowntimer").innerHTML = time.toPrecision(2);
   }, 10)
   
 }
